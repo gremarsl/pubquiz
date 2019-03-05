@@ -1,7 +1,8 @@
 from pptx import Presentation
 from pptx.util import Inches, Pt
 
-#insert picture
+#insert picture 
+#you can find the file to store locally in the trunk
 img_path = 'pubquiz.png'
 
 #create presentation object 
