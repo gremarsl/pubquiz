@@ -1,7 +1,6 @@
 from pptx import Presentation
 from pptx.util import Inches, Pt
 
-
 #insert picture
 img_path = 'pubquiz.png'
 zickzack='zickzack.png'
@@ -17,7 +16,6 @@ numberOfQuestions=10
 #create list of questions and append to list
 #TODO: create list of variable length (egal ob 10 oder 12 Fragen) - das können wir dann ggf ausbauen,
     #wenn wir ein erstes funktionierendes skript haben
-    #hätte ich vorgeschlagen
 questions=list()
 answers=list()
 
@@ -126,8 +124,6 @@ for i in range(10):
     slide.shapes.add_picture(zickzack,Inches(0), Inches(0),Inches(2),Inches(8))
     slide.shapes.add_picture(logo,Inches(8), Inches(5.5),Inches(2),Inches(1.6))
 
-
-    
     #add textbox
     txBox = slide.shapes.add_textbox(left, top, width, height)
     tf = txBox.text_frame
@@ -144,7 +140,8 @@ for i in range(10):
 
     answer = tf.add_paragraph()
     
-    #TODO: extract answers and write it into the textbox                       
+    #TODO: extract answers and write it into the textbox
+    #added test #TODO
     answer.text = str(answers[i])
     answer.font.size = Pt(32)
     answer.font.bold = True
