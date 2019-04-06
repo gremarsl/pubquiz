@@ -7,7 +7,7 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 
 #insert picture
-from classes import questions
+from classes.questions import questions
 
 img_path = 'pubquiz.png'
 zickzack='zickzack.png'
@@ -26,8 +26,8 @@ numberOfQuestions=10
 
 
 
-
-questions.readAllCsvFiles()
+q = questions()
+q.readAllCsvFiles()
 
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):
 #TODO: parametrise the numberOfQuestions
