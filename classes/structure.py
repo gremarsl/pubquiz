@@ -19,7 +19,9 @@ class qround:
     
     questions=[]
     
-    #def __init__(Self):
+    def __init__(Self, number):
+        Self.number = number;
+        pass
     
     
     def addQuestion(Self, question):
@@ -57,15 +59,17 @@ class question:
         print(Self.question)
         for a in Self.answers:
             print(a)
-        
-q=quiz()
-r=qround()
-u=question("Wer erfand Python")
-u.addAnswer("Linus Thorvalds", 0)
-u.addAnswer("Guido van Rossum", 1)
-u.addAnswer("Bill Gates", 0)
-u.addAnswer("Monty Python", 0)
-r.addQuestion(u)
-q.addRound(r)
 
-q.dump()
+
+if __name__ == '__main__':  # if this is main file, run fcn
+    q=quiz()
+    r=qround()
+    u=question("Wer erfand Python")
+    u.addAnswer("Linus Thorvalds", 0)
+    u.addAnswer("Guido van Rossum", 1)
+    u.addAnswer("Bill Gates", 0)
+    u.addAnswer("Monty Python", 0)
+    r.addQuestion(u)
+    q.addRound(r)
+    
+    q.dump()
