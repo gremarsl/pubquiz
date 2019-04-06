@@ -1,8 +1,9 @@
 class quiz:
-    rounds=[]
+
+    def __init__(Self):
+        Self.rounds =[]
+
     #def __init__(Self):
-    
-    
     """Eine Instanz von Runde hinzufügen
     q=quiz()
     r=qround()
@@ -16,24 +17,24 @@ class quiz:
             rnd.dump()
 
 class qround:
-    
-    questions=[]
-    
+
     def __init__(Self, number):
-        Self.number = number;
+        Self.questions=[]
+        Self.number = number
         pass
-    
-    
+
     def addQuestion(Self, question):
-        Self.questions.append(question);
+        Self.questions.append(question)
     
     def dump(Self):
         for q in Self.questions:
             q.dump()
 
+
 class question:
+
     question=""
-    answers={}
+    answers=[]
     _image=""
     _comment=""
     
