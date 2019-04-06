@@ -25,9 +25,10 @@ numberOfQuestions=10
     #wenn wir ein erstes funktionierendes skript haben
 
 
-
 q = questions()
-q.readAllCsvFiles()
+directoryToFiles = os.path.dirname(__file__)
+print(directoryToFiles)
+q.readAllCsvFiles(directoryToFiles)
 
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):
 #TODO: parametrise the numberOfQuestions
