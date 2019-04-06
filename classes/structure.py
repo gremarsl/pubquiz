@@ -71,5 +71,5 @@ if __name__ == '__main__':  # if this is main file, run fcn
     u.addAnswer("Monty Python", 0)
     r.addQuestion(u)
     q.addRound(r)
-    
+
     q.dump()
