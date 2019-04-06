@@ -3,6 +3,9 @@ import glob
 
 class questions:
 
+    def __init__(self):
+        pass
+
     def readAllCsvFiles(self):
 
         dir = os.path.dirname(__file__)
