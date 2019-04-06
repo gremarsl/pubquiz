@@ -1,11 +1,14 @@
 #TEST!
 #TESTvismgl
 import csv
+import glob, os
+import sys
 from pptx import Presentation
 from pptx.util import Inches, Pt
 
-
 #insert picture
+from classes import questions
+
 img_path = 'pubquiz.png'
 zickzack='zickzack.png'
 logo='logo.png'
@@ -20,26 +23,11 @@ numberOfQuestions=10
 #create list of questions and append to list
 #TODO: create list of variable length (egal ob 10 oder 12 Fragen) - das können wir dann ggf ausbauen,
     #wenn wir ein erstes funktionierendes skript haben
-questions=list()
-answers=list()
 
 
-def readAllCsvFiles():
-    print("start implementing ")
 
 
-readAllCsvFiles()
-
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
-questions.append("Wie heißt Yoda’s Spezies?")
+questions.readAllCsvFiles()
 
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):
 #TODO: parametrise the numberOfQuestions
