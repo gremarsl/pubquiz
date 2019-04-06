@@ -1,5 +1,6 @@
 import os
 import glob
+import csv
 
 class questions:
 
@@ -7,16 +8,31 @@ class questions:
         pass
 
     def readAllCsvFiles(self):
+        questions=[]
+        correctAnswers=[]
+        wrongAnswers=[]
+        comments=[]
 
         dir = os.path.dirname(__file__)
-        filename = os.path.join(dir, 'readin_data/file.csv')
 
-        for file in glob.glob("*.csv"):
+        for file in glob.glob(dir, "*.csv"):
 
             with open(file) as file:
+                csvfile = csv.reader(file)
+
                 for line in file:
-                    
+
                     question, answer, answer = line.split(',')
+                    questions.append(question)
+                    correctAnswers.append()
+                    wrongAnswers.append()
+
+                    #TODO implement if comment is added
+                    if():
+                        comments
+                    else:
+                        print("no comment")
+
 
 
         return print("reading done")
