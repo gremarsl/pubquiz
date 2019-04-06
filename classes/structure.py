@@ -64,7 +64,7 @@ class question:
 
 if __name__ == '__main__':  # if this is main file, run fcn
     q=quiz()
-    r=qround()
+    r=qround(1)
     u=question("Wer erfand Python")
     u.addAnswer("Linus Thorvalds", 0)
     u.addAnswer("Guido van Rossum", 1)
