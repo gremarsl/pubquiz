@@ -1,8 +1,9 @@
 #TEST!
 #TESTvismgl
-#TESTvisvsa
+import csv
 from pptx import Presentation
 from pptx.util import Inches, Pt
+
 
 #insert picture
 img_path = 'pubquiz.png'
@@ -21,6 +22,13 @@ numberOfQuestions=10
     #wenn wir ein erstes funktionierendes skript haben
 questions=list()
 answers=list()
+
+
+def readAllCsvFiles():
+    print("start implementing ")
+
+
+readAllCsvFiles()
 
 questions.append("Wie heißt Yoda’s Spezies?")
 questions.append("Wie heißt Yoda’s Spezies?")
@@ -154,3 +162,4 @@ for i in range(10):
 
 #save file
 prs.save('pubquiz_LG_Stuttgart.pptx')
+
