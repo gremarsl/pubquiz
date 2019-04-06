@@ -4,16 +4,18 @@ import glob
 class questions:
 
     def readAllCsvFiles(self):
-        '''
+
         dir = os.path.dirname(__file__)
-        filename = os.path.join(dir, 'file.csv')
+        filename = os.path.join(dir, 'readin_data/file.csv')
 
         for file in glob.glob("*.csv"):
 
-            with open(file) as f:
-                for line in f:
-                    line.split(',')
-        '''
+            with open(file) as file:
+                for line in file:
+                    
+                    question, answer, answer = line.split(',')
+
+
         return print("reading done")
 
 '''
