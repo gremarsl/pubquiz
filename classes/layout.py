@@ -1,5 +1,4 @@
 import copy
-
 import six
 from pptx import Presentation
 from enum import IntEnum

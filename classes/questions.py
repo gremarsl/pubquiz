@@ -6,9 +6,11 @@ import classes.structure as struct
 class questions:
 
     def __init__(self):
+        print("init")
         pass
 
     def readAllCsvFiles(self,directoryToFiles):
+        print("start")
 
         questions=[]
         correctAnswers=[]
@@ -35,6 +37,7 @@ class questions:
 
                         if '*' in element:
                             correctAnswers.append(element[1:])
+                            correctAnswers.append(element[1:2])
                         elif '#' in element:
                             comments.append(element[1:])
                         elif '~' in element:

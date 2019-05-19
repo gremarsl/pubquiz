@@ -1,2 +1,5 @@
 .idea/*
-
+*.pptx
+playground_marcel.py
+.gitignore
+__pycache__/
