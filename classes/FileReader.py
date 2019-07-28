@@ -11,7 +11,6 @@ class FileReader:
     def readAllCsvFiles(self,directoryToFiles):
         print("start reading Csv File With quesetions")
 
-
         folder=directoryToFiles+'/readin_data/'
 
         for file in glob.glob(os.path.join(folder, '*.csv')):
