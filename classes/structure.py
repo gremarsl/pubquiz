@@ -32,30 +32,25 @@ class qround:
             q.dump()
 
 class question:
-    question = ""
     answers = []
-    _image = ""
-    _comment = ""
 
-    def __init__(Self, q):
-        Self.question = q
 
-    def addAnswer(Self, answer, correct):
-        Self.answers[answer] = correct;
+    def __init__(self):
+        pass
+    def addQuestion(self,question):
+        self.question=question
 
-    def setImage(Self, image):
-        Self._image = image
+    def addAnswer(self, answer, correct):
+        self.answers[answer] = correct;
 
-    def getImage(Self):
-        return Self._image
+    def setImage(self, image):
+        self.image = image
 
-    def setComment(Self, comment):
-        Self._comment = comment
+    def getImage(self):
+        return self.image
 
-    def getComment(Self):
-        return Self._comment
+    def setComment(self, comment):
+        self.comment = comment
 
-    def dump(Self):
-        print(Self.question)
-        for a in Self.answers:
-            print(a)
+    def getComment(self):
+        return self.comment
