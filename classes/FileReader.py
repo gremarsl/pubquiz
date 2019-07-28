@@ -1,9 +1,9 @@
 import os
 import glob
-import csv
+
 import classes.structure as struct
 
-class questions:
+class FileReader:
 
     def __init__(self):
         print("init")
@@ -11,7 +11,6 @@ class questions:
 
     def readAllCsvFiles(self,directoryToFiles):
         print("start reading Csv File With quesetions")
-
         questions=[]
         correctAnswers=[]
         wrongAnswers=[]
@@ -30,8 +29,6 @@ class questions:
                 #skipt second line
                 next(file)
                 for line in file:
-
-
                     question=line[0]
                     quest_sruct = struct.question(line[0])
                     linelist=line[1:]

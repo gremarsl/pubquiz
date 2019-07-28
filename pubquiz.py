@@ -3,7 +3,7 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 
 #insert picture
-from classes.questions import questions
+from classes.FileReader import FileReader
 
 img_path = 'pubquiz.png'
 zickzack='zickzack.png'
@@ -21,11 +21,12 @@ numberOfQuestions=10
     #wenn wir ein erstes funktionierendes skript haben
 
 
-questions = questions()
-directoryToFiles = os.path.dirname(__file__)
-print(directoryToFiles)
-questions.readAllCsvFiles(directoryToFiles)
+FileReader = FileReader()
+directoryToFile = os.path.dirname(__file__)
+print(directoryToFile)
+FileReader.readAllCsvFiles(directoryToFile)
 
+'''
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):
 #TODO: parametrise the numberOfQuestions
 answer1=["A) Das ist die erste Auswahlmöglichkeit",
@@ -133,7 +134,7 @@ for i in range(10):
     questionTextBox = tf.add_paragraph()
     questionTextBox.size=Pt(40)
     frage.font.bold=True
-    questionTextBox.text = questions[i]
+    questionTextBox.text = FileReader[i]
 
     answer = tf.add_paragraph()
     
@@ -145,7 +146,7 @@ for i in range(10):
     questionCounter+=1
     i+=1
 
-
+'''
 #save file
 prs.save('pubquiz_LG_Stuttgart.pptx')
 
