@@ -1,8 +1,4 @@
-#TEST!
-#TESTvismgl
-import csv
-import glob, os
-import sys
+import os
 from pptx import Presentation
 from pptx.util import Inches, Pt
 
@@ -25,10 +21,10 @@ numberOfQuestions=10
     #wenn wir ein erstes funktionierendes skript haben
 
 
-q = questions()
+questions = questions()
 directoryToFiles = os.path.dirname(__file__)
 print(directoryToFiles)
-q.readAllCsvFiles(directoryToFiles)
+questions.readAllCsvFiles(directoryToFiles)
 
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):
 #TODO: parametrise the numberOfQuestions
@@ -78,6 +74,7 @@ answer10=["A) Das ist die erste Auswahlmöglichkeit",
 #TODO wollen wir es in einer liste von liste gestalten oder in einem 2D-Array?
 #add answers to allAnswers
 # möglichkeit, schnell und dynamisch füllen mit for schleife
+answers=[]
 answers.append(answer1)
 answers.append(answer2)
 answers.append(answer3)
