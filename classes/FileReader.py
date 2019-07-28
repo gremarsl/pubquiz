@@ -10,27 +10,23 @@ class FileReader:
 
     def readAllCsvFiles(self,directoryToFiles):
         print("start reading Csv File With quesetions")
-        questions=[]
-        correctAnswers=[]
-        wrongAnswers=[]
-        comments=[]
-        pictures=[]
+
 
         folder=directoryToFiles+'/readin_data/'
 
         for file in glob.glob(os.path.join(folder, '*.csv')):
 
-            round_struct = structure.qround(1)
-
             with open(file) as file:
-                # skip first line (First Line for explanation and syntax )
+                # skip first two line (First Line for explanation and syntax )
                 next(file)
-                #skipt second line
                 next(file)
                 num_lines = sum(1 for line in file)
 
-                #FIXME: -2 depend on number of skipped files
                 questions = [structure.question() for i in range(num_lines)]
+                file.seek(0)
+                # skip first two line (First Line for explanation and syntax )
+                next(file)
+                next(file)
                 for line in file:
 
                     linelist=line[1:]
@@ -38,27 +34,20 @@ class FileReader:
 
                     questioncounter=0
                     for element in linelist:
-                        questioncounter+=1
                         if '?' in element:
-                            questions[questioncounter].addquestion(element)
-
+                            questions[questioncounter].setQuestion(element)
                         elif '*' in element:
-                            correctAnswers.append(element[1:])
+                            questions[questioncounter].setCorrectAnswer(element)
                         elif '#' in element:
-                            comments.append(element[1:])
+                            questions[questioncounter].setComment(element)
                         elif '~' in element:
-                            pictures.append(element[1:])
+                            questions[questioncounter].setImage(element)
                         elif len(element)==0:
                             linelist.remove(element)
                         elif '\n'==element:
                             continue
                         else:
-                            wrongAnswers.append(element)
-                '''
-                for corr_answer in correctAnswers:
-                    quest_sruct.addAnswer(answer=corr_answer, correct=True)
-
-                for wrong_answer in wrongAnswers:
-                    quest_sruct.addAnswer(answer=wrong_answer, correct=False)
-                '''
-        return print("reading done")
+                            questions[questioncounter].setWrongAnswer(element)
+                    questioncounter += 1
+        print("reading done")
+        return questions
