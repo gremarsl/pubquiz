@@ -24,7 +24,7 @@ numberOfQuestions=10
 FileReader = FileReader()
 directoryToFile = os.path.dirname(__file__)
 print(directoryToFile)
-FileReader.readAllCsvFiles(directoryToFile)
+questions = FileReader.readAllCsvFiles(directoryToFile)
 
 '''
 #create the answers - can be filled as desired since of type list possible: (for i in range(1,numberOfQuestions):

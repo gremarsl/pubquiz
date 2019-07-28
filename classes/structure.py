@@ -32,16 +32,23 @@ class qround:
             q.dump()
 
 class question:
-    answers = []
 
+    correctAnswer =""
+    question=""
+    comment=""
+
+    wrongAnswers=[]
 
     def __init__(self):
         pass
-    def addQuestion(self,question):
+
+    def setQuestion(self,question):
         self.question=question
 
-    def addAnswer(self, answer, correct):
-        self.answers[answer] = correct;
+    def setCorrectAnswer(self, answer):
+        self.correctAnswer = answer
+    def setWrongAnswer(self, answer):
+        self.wrongAnswers.append(answer)
 
     def setImage(self, image):
         self.image = image
