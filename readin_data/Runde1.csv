@@ -1,3 +1,5 @@
+#R1:Frage,*=richtigeAntwort,ohne=Falsche Antworten, %=Bildname für Frage mit Bild, #=Kommentar
+#jede Zeile muss mit einem Komma beendet werden!
 R1:Wie heißt die Mutter von Nikki Lauda?,*Mama Lauda,Mama Leiser, Mama Nikki, Mamma Schneller,
 R1:Das ist eine offene Frage?,*richtige Antwort,,,,
 R1:Das ist eine Multiple Choice Frage?,*richtige Antwort,falsche Antwort,falsche Antwort,falsche Antwort,
