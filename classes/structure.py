@@ -44,20 +44,25 @@ class question:
 
     def setQuestion(self,question):
         self.question=question
+    def getQuestion(self):
+        return self.question
 
     def setCorrectAnswer(self, answer):
         self.correctAnswer = answer
+    def getCorrectAnswer(self):
+        return self.correctAnswer
+
     def setWrongAnswer(self, answer):
         self.wrongAnswers.append(answer)
+    def getWrongAnswers(self):
+        return self.wrongAnswers
 
     def setImage(self, image):
         self.image = image
-
     def getImage(self):
         return self.image
 
     def setComment(self, comment):
         self.comment = comment
-
     def getComment(self):
         return self.comment
