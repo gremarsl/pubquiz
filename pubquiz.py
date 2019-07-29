@@ -7,14 +7,15 @@ FileReader = FileReader()
 directoryToFile = os.path.dirname(__file__)
 print(directoryToFile)
 questions=FileReader.readAllCsvFiles(directoryToFile)
-print(questions[0].getQuestion())
-print(questions[1].getQuestion())
-print(questions[2].getQuestion())
-print(questions[3].getQuestion())
-print(questions[4].getQuestion())
 
-#save file
+presentation=Presentation()
+layout=Layout()
 
-pres= Presentation()
-pres.save('pubquiz.pptx')
+titleSlide=layout.getTitleSlide()
+
+blank_slide_layout = presentation.slide_layouts[6]
+print(type(blank_slide_layout))
+print(type(titleSlide))
+
+presentation.save('pubquiz.pptx')
 
