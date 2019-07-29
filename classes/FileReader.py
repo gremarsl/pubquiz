@@ -26,12 +26,13 @@ class FileReader:
                 # skip first two line (First Line for explanation and syntax )
                 next(file)
                 next(file)
+                questioncounter = 0
                 for line in file:
 
                     linelist=line[1:]
                     linelist= linelist.split(",")
 
-                    questioncounter=0
+
                     for element in linelist:
                         if '?' in element:
                             questions[questioncounter].setQuestion(element)
@@ -49,4 +50,5 @@ class FileReader:
                             questions[questioncounter].setWrongAnswer(element)
                     questioncounter += 1
         print("reading done")
+        #FIXME how to pass global objects
         return questions
