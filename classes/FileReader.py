@@ -2,6 +2,15 @@ import os
 import glob
 import classes.structure as structure
 
+
+def skipfirstlines(file):
+    next(file)
+    next(file)
+    next(file)
+    next(file)
+    pass
+
+
 class FileReader:
 
     def __init__(self):
@@ -9,29 +18,30 @@ class FileReader:
         pass
 
     def readAllCsvFiles(self,directoryToFiles):
-        print("start reading Csv File With quesetions")
+        print("start reading Csv File With questions")
 
-        folder=directoryToFiles+'/readin_data/'
+        folder=directoryToFiles+'/pubquizfragen/'
 
         for file in glob.glob(os.path.join(folder, '*.csv')):
 
             with open(file) as file:
-                # skip first two line (First Line for explanation and syntax )
-                next(file)
-                next(file)
+                # skip first four line (First Line for explanation and syntax)
+                skipfirstlines(file)
+
+
                 num_lines = sum(1 for line in file)
 
                 questions = [structure.question() for i in range(num_lines)]
+                #start reading from the first caracter:
                 file.seek(0)
-                # skip first two line (First Line for explanation and syntax )
-                next(file)
-                next(file)
+                # skip lines (First Line for explanation and syntax )
+                skipfirstlines(file)
+
                 questioncounter = 0
                 for line in file:
 
                     linelist=line[1:]
                     linelist= linelist.split(",")
-
 
                     for element in linelist:
                         if '?' in element:
@@ -50,5 +60,4 @@ class FileReader:
                             questions[questioncounter].setWrongAnswer(element)
                     questioncounter += 1
         print("reading done")
-        #FIXME how to pass global objects
         return questions
